@@ -1,9 +1,10 @@
 package mybatis.generator.plugins;
 
-import org.mybatis.generator.api.*;
+import org.mybatis.generator.api.IntrospectedColumn;
+import org.mybatis.generator.api.IntrospectedTable;
+import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
-import org.mybatis.generator.config.TableConfiguration;
 
 import java.util.List;
 
@@ -21,27 +22,33 @@ public class GeneratorSwagger2Doc extends PluginAdapter {
 
     @Override
     public boolean modelFieldGenerated(Field field, TopLevelClass topLevelClass, IntrospectedColumn introspectedColumn, IntrospectedTable introspectedTable, ModelClassType modelClassType) {
-        String classAnnotation = "@ApiModel(value=\"" + topLevelClass.getType()  + "\")";
+        String classAnnotation = "@ApiModel(value=\"" + topLevelClass.getType() + "\")";
 
-        String apiModelAnnotationPackage =  properties.getProperty("apiModelAnnotationPackage");
+        String apiModelAnnotationPackage = properties.getProperty("apiModelAnnotationPackage");
         String apiModelPropertyAnnotationPackage = properties.getProperty("apiModelPropertyAnnotationPackage");
-        if(null == apiModelAnnotationPackage) apiModelAnnotationPackage = "io.swagger.annotations.ApiModel";
-        if(null == apiModelPropertyAnnotationPackage) apiModelPropertyAnnotationPackage = "io.swagger.annotations.ApiModelProperty";
+        if (null == apiModelAnnotationPackage) apiModelAnnotationPackage = "io.swagger.annotations.ApiModel";
+        if (null == apiModelPropertyAnnotationPackage)
+            apiModelPropertyAnnotationPackage = "io.swagger.annotations.ApiModelProperty";
 
         String generatorJavaDoc = properties.getProperty("generatorJavaDoc", "TRUE");
         String generatorSwaggerDoc = properties.getProperty("generatorSwaggerDoc", "TRUE");
+        String generatorSwaggerDocApiOperatorJavaProperty = properties.getProperty("generatorSwaggerDocApiOperatorJavaProperty", "FALSE");
 
-        if("FALSE".equals(generatorSwaggerDoc.toUpperCase())) {
+        if ("TRUE".equals(generatorSwaggerDoc.toUpperCase())) {
             topLevelClass.addImportedType(apiModelAnnotationPackage);
             topLevelClass.addImportedType(apiModelPropertyAnnotationPackage);
-            field.addAnnotation("@ApiModelProperty(value=\"" + introspectedColumn.getJavaProperty() + introspectedColumn.getRemarks() + "\")");
+            if ("FALSE".equals(generatorSwaggerDocApiOperatorJavaProperty.toUpperCase())) {
+                field.addAnnotation("@ApiModelProperty(value=\"" + introspectedColumn.getRemarks() + "\")");
+            } else {
+                field.addAnnotation("@ApiModelProperty(value=\"" + introspectedColumn.getJavaProperty() + introspectedColumn.getRemarks() + "\")");
+            }
 
-            if(!topLevelClass.getAnnotations().contains(classAnnotation)) {
+            if (!topLevelClass.getAnnotations().contains(classAnnotation)) {
                 topLevelClass.addAnnotation(classAnnotation);
             }
         }
 
-        if("TRUE".equals(generatorJavaDoc.toUpperCase())) {
+        if ("TRUE".equals(generatorJavaDoc.toUpperCase())) {
             field.addJavaDocLine("/**");
             field.addJavaDocLine(introspectedColumn.getRemarks());
             field.addJavaDocLine("*/");
