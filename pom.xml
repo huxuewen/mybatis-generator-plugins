@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>myBatisGeneratorPlugins</name>
-    <groupId>com.github.misterchangray.mybatis.generator.plugins</groupId>
+    <groupId>com.github.huxuewen.mybatis.generator.plugins</groupId>
     <artifactId>myBatisGeneratorPlugins</artifactId>
     <version>1.5</version>
-    <url>https://github.com/MisterChangRay/mybatis-generator-plugins</url>
+    <url>https://github.com/huxuewen/mybatis-generator-plugins</url>
     <description>some mybatis-generator-plugin extend plugin</description>
     <packaging>jar</packaging>
 
@@ -20,8 +20,8 @@
 
     <developers>
         <developer>
-            <name>zhangrui</name>
-            <email>misterchangray@hotmail.com</email>
+            <name>huxuewen</name>
+            <email>hu1964580037@gmail.com</email>
         </developer>
     </developers>
 
@@ -29,14 +29,14 @@
     <licenses>
         <license>
             <name>BSD 3-Clause License</name>
-            <url>https://github.com/MisterChangRay/mybatis-generator-plugins/blob/master/LICENSE</url>
+            <url>https://github.com/huxuewen/mybatis-generator-plugins/blob/master/LICENSE</url>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:https://github.com/MisterChangRay/mybatis-generator-plugins.git</connection>
-        <developerConnection>scm:https://github.com/MisterChangRay/mybatis-generator-plugins.git</developerConnection>
-        <url>git@https://github.com/MisterChangRay/mybatis-generator-plugins.git</url>
+        <connection>scm:https://github.com/huxuewen/mybatis-generator-plugins.git</connection>
+        <developerConnection>scm:https://github.com/huxuewen/mybatis-generator-plugins.git</developerConnection>
+        <url>git@https://github.com/huxuewen/mybatis-generator-plugins.git</url>
     </scm>
 
     <profiles>
