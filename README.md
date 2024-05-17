@@ -4,10 +4,10 @@
 改了下swagger2的功能，修正generatorSwaggerDoc配置改成true开启，强迫症受不了
 增加generatorSwaggerDocApiOperatorJavaProperty属性去移除@ApiOperation注解中的数据表字段值，默认false，强迫症受不了
 
-[![GitHub (pre-)release](https://img.shields.io/github/release/misterchangray/mybatis-generator-plugins/all.svg)](https://github.com/misterchangray/mybatis-generator-plugins) 
-[![GitHub issues](https://img.shields.io/github/issues/misterchangray/mybatis-generator-plugins.svg)](https://github.com/misterchangray/mybatis-generator-plugins/issues) 
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/misterchangray/mybatis-generator-plugins.svg)](https://github.com/misterchangray/mybatis-generator-plugins/issues?q=is%3Aissue+is%3Aclosed) 
-[![GitHub](https://img.shields.io/github/license/misterchangray/mybatis-generator-plugins.svg)](./LICENSE)
+[![GitHub (pre-)release](https://img.shields.io/github/release/huxuewen/mybatis-generator-plugins/all.svg)](https://github.com/huxuewen/mybatis-generator-plugins) 
+[![GitHub issues](https://img.shields.io/github/issues/huxuewen/mybatis-generator-plugins.svg)](https://github.com/huxuewen/mybatis-generator-plugins/issues) 
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/huxuewen/mybatis-generator-plugins.svg)](https://github.com/huxuewen/mybatis-generator-plugins/issues?q=is%3Aissue+is%3Aclosed) 
+[![GitHub](https://img.shields.io/github/license/huxuewen/mybatis-generator-plugins.svg)](./LICENSE)
 
 
 #### 已实现功能
