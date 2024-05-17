@@ -32,7 +32,7 @@ public class GeneratorSwagger2Doc extends PluginAdapter {
 
         String generatorJavaDoc = properties.getProperty("generatorJavaDoc", "TRUE");
         String generatorSwaggerDoc = properties.getProperty("generatorSwaggerDoc", "TRUE");
-        String generatorSwaggerDocApiOperatorJavaProperty = properties.getProperty("generatorSwaggerDocApiOperatorJavaProperty", "FALSE");
+        String generatorSwaggerDocApiOperatorJavaProperty = properties.getProperty("generatorSwaggerDocApiModelPropertyJavaProperty", "FALSE");
 
         if ("TRUE".equals(generatorSwaggerDoc.toUpperCase())) {
             topLevelClass.addImportedType(apiModelAnnotationPackage);

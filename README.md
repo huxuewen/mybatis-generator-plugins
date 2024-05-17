@@ -57,7 +57,7 @@
           <dependency>
             <groupId>io.github.huxuewen</groupId>
             <artifactId>myBatisGeneratorPlugins</artifactId>
-            <version>1.5.1</version>
+            <version>1.5.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,8 +89,8 @@
             <property name="generatorJavaDoc" value="false"/>
             <!-- 生成 swagger 注释 默认 true -->
             <property name="generatorSwaggerDoc" value="true"/>
-            <!-- 生成 swagger @ApiOperation注释是是否在描述中添加数据库字段名 默认 false -->
-            <property name="generatorSwaggerDocApiOperatorJavaProperty" value="false"/>
+            <!-- 生成 swagger @ApiModelProperty注释是是否在描述中添加数据库字段名 默认 false -->
+            <property name="generatorSwaggerDocApiModelPropertyJavaProperty" value="false"/>
             <!-- GenerateSwagger3Doc支持 是否使用完整路径作为apiModel 的value值，默认为false，设置为true时为避免swagger $ref报错将路径名称中的.替换为了$-->
             <property name="useFullPathName" value="false"/>
         </plugin>
@@ -141,7 +141,7 @@ add dependency to your pom.xml on mybatis node. like:
           <dependency>
               <groupId>io.github.huxuewen</groupId>
               <artifactId>myBatisGeneratorPlugins</artifactId>
-              <version>1.5.1</version>
+              <version>1.5.2</version>
           </dependency>
   
         </dependencies>
