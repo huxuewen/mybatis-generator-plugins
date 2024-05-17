@@ -2,7 +2,7 @@
 本项目基于已存在的 mybatis-generator 做了扩展处理, 增加更多插件功能。
 本项目基于https://github.com/misterchangray/mybatis-generator-plugins修改
 改了下swagger2的功能，修正generatorSwaggerDoc配置改成true开启，强迫症受不了
-增加generatorSwaggerDocApiOperatorJavaProperty属性去移除@ApiOperation注解中的数据表字段值，默认false，强迫症受不了
+增加generatorSwaggerDocApiOperatorJavaProperty属性去移除@ApiModelProperty注解中的数据表字段值，默认false，强迫症受不了
 
 [![GitHub (pre-)release](https://img.shields.io/github/release/huxuewen/mybatis-generator-plugins/all.svg)](https://github.com/huxuewen/mybatis-generator-plugins) 
 [![GitHub issues](https://img.shields.io/github/issues/huxuewen/mybatis-generator-plugins.svg)](https://github.com/huxuewen/mybatis-generator-plugins/issues) 
