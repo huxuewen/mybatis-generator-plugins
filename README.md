@@ -124,7 +124,6 @@ add dependency to your pom.xml on mybatis node. like:
 <!-- maven  -->
 <build>
     <finalName>common-core</finalName>
-    <!--  ...  -->
     <plugins>
       <!--mybatis 逆向工程插件-->
       <plugin>
@@ -136,7 +135,7 @@ add dependency to your pom.xml on mybatis node. like:
           <overwrite>true</overwrite>
         </configuration>
         <dependencies>
-          <!--  use plugin  -->
+          <!-- use plugin  -->
           <!-- https://mvnrepository.com/artifact/com.github.misterchangray.mybatis.generator.plugins/myBatisGeneratorPlugins -->
           <dependency>
               <groupId>io.github.huxuewen</groupId>
