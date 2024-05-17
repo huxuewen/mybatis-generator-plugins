@@ -1,5 +1,8 @@
 # myBatisGeneratorPlugins
 本项目基于已存在的 mybatis-generator 做了扩展处理, 增加更多插件功能。
+本项目基于https://github.com/misterchangray/mybatis-generator-plugins修改
+改了下swagger2的功能，修正generatorSwaggerDoc配置改成true开启，强迫症受不了
+增加generatorSwaggerDocApiOperatorJavaProperty属性去移除@ApiOperation注解中的数据表字段值，默认false，强迫症受不了
 
 [![GitHub (pre-)release](https://img.shields.io/github/release/misterchangray/mybatis-generator-plugins/all.svg)](https://github.com/misterchangray/mybatis-generator-plugins) 
 [![GitHub issues](https://img.shields.io/github/issues/misterchangray/mybatis-generator-plugins.svg)](https://github.com/misterchangray/mybatis-generator-plugins/issues) 
@@ -44,18 +47,17 @@
       <plugin>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-maven-plugin</artifactId>
-        <version>1.3.5</version>
+        <version>1.3.7</version>
         <configuration>
           <verbose>true</verbose>
           <overwrite>true</overwrite>
         </configuration>
         <dependencies>
           <!--  use plugin  -->
-          <!-- https://mvnrepository.com/artifact/com.github.misterchangray.mybatis.generator.plugins/myBatisGeneratorPlugins -->
           <dependency>
-              <groupId>com.github.misterchangray.mybatis.generator.plugins</groupId>
-              <artifactId>myBatisGeneratorPlugins</artifactId>
-              <version>1.4</version>
+            <groupId>io.github.huxuewen</groupId>
+            <artifactId>myBatisGeneratorPlugins</artifactId>
+            <version>1.5.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -86,7 +88,9 @@
             <!-- 生成JAVA注释 默认 true -->
             <property name="generatorJavaDoc" value="false"/>
             <!-- 生成 swagger 注释 默认 true -->
-            <property name="generatorSwaggerDoc" value="false"/>
+            <property name="generatorSwaggerDoc" value="true"/>
+            <!-- 生成 swagger @ApiOperation注释是是否在描述中添加数据库字段名 默认 false -->
+            <property name="generatorSwaggerDocApiOperatorJavaProperty" value="false"/>
             <!-- GenerateSwagger3Doc支持 是否使用完整路径作为apiModel 的value值，默认为false，设置为true时为避免swagger $ref报错将路径名称中的.替换为了$-->
             <property name="useFullPathName" value="false"/>
         </plugin>
@@ -126,7 +130,7 @@ add dependency to your pom.xml on mybatis node. like:
       <plugin>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-maven-plugin</artifactId>
-        <version>1.3.5</version>
+        <version>1.3.7</version>
         <configuration>
           <verbose>true</verbose>
           <overwrite>true</overwrite>
@@ -135,9 +139,9 @@ add dependency to your pom.xml on mybatis node. like:
           <!--  use plugin  -->
           <!-- https://mvnrepository.com/artifact/com.github.misterchangray.mybatis.generator.plugins/myBatisGeneratorPlugins -->
           <dependency>
-              <groupId>com.github.misterchangray.mybatis.generator.plugins</groupId>
+              <groupId>io.github.huxuewen</groupId>
               <artifactId>myBatisGeneratorPlugins</artifactId>
-              <version>1.4</version>
+              <version>1.5.1</version>
           </dependency>
   
         </dependencies>
@@ -164,4 +168,5 @@ add dependency to your pom.xml on mybatis node. like:
 ##### 4. 感谢
 1. @Windman
 2. @pdxh
+3. @misterchangray
 
